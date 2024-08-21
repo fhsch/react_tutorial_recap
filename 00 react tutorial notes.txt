@@ -101,5 +101,7 @@ function showPunchline() {
 - if more than two options: conditional preferred outside of the return e. g. via a let variable
 
 - Forms: event.target (html element); event.target.value (html element value, like the text in a form field)
+- Controlled inputs: use function on every input field to register each change and update state accordingly
 
+08:50: Bei APA weiter machen
 
