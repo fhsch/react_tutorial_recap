@@ -90,5 +90,16 @@ function Component(props) {
 		onClick={props.handleClick)			// use function (in App, since it lives there) via props in child Component
 	)
 
-06:59: box challenge schon code zu ende angesehen aber video noch nicht
+- box challenge on how to render different elements of an array and change them individually on click by passing
+  a function based on their id to each of them (you will not understand that in the future)
+
+- conditional rendering: {props.setup && <h3>{props.setup}</h3>} (shows h3 if props.setup === true)
+function showPunchline() {
+        setIsShown(previousIsShown => !previousIsShown)        // flips boolean on click
+    }
+- <button onClick={showPunchline}>{isShown ? "Hide Punchline" : "Show Punchline"}</button> // flips button text base on boolean
+- if more than two options: conditional preferred outside of the return e. g. via a let variable
+
+- Forms: event.target (html element); event.target.value (html element value, like the text in a form field)
+
 
