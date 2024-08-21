@@ -1,0 +1,94 @@
+00 Start React App
+npm create vite@latest
+npm install
+npm run dev
+
+MOST IMPORTANT TOPICS:
+1. Setup
+2. Basic App structure
+3. Rendering Components
+(CSS gradually covered with every step)
+__
+4. Props
+5. Mapping for rendering multiple components {...spread}
+__
+6. Event Listeners
+7. State
+____________________
+RECAP BECAUSE I DIDN'T REMEMBER SHIT. DON'T TAKE BREAKS YOU MORON.
+____________________
+
+01 Info Site
+Recap starts from video at 01:51:00: https://www.youtube.com/watch?v=bMknfKXIFA8&t=454s&ab_channel=freeCodeCamp.org
+
+- export default function Whatever() can only export one element, so wrap it in a <div>
+	return (
+		<div>
+			<One />
+			<Two />
+		</div>
+	)
+____________________
+02 AirBnB: Topics
+- Everything that needs to be compiled should be in src, everything 'outside the app' in public (sof)
+- props
+- Javascript in JSX:
+	<div>{variable}</div>
+	<img src={`src/assets/${props.img}`} />
+- mapping aka going over an array and do something to each element to return a new array
+passing all items together as {item} didn't work; {...item} did
+  
+  const cards = data.map(item => {
+    return (
+      <Card
+      key={item.id}
+      {...item}             // spread/pass through all data from data.jsx (ony props.variable, not props.item.variable)
+      />
+    )
+  })
+- copied the css to make the cards horizontally; might check later not
+- conditional JSX elements: {badgeText && <div className="card--badge">{badgeText}</div>} only if badgeText exists
+
+____________________
+03 MEME GENERATOR
+- EventListener: <button onClick={function}>Click me</button>  
+/// https://reactjs.org/docs/events.html#mouse-events: onClick, onMouseOver, onMouseEnter etc.
+
+- State
+import React from "react"  // that was why it didn't work
+const [ara, setAra] = React.useState("whatever")
+
+function doSomething() {
+	setAra("whatever2")	// see React sheet for CALLBACK functions that use the initial state value
+}				// e.g. setAra(prevState => !prevState) flips a boolean
+
+- Ternary operator: 
+<h1>{isGoingOut ? "Yes" : "No"}</h1> Displays Yes if iSgoingOut == true
+
+- Complex state arrays and objects (just watched it; see tutorial codes for details on how to change values)
+  important: always create new state variable via callback function; don't change the original state
+
+- State as objects and changing its single properties
+function toggleFavorite() {
+	setContact(prevContact => {
+            return {
+                ...prevContact,				// keeps everything else the same via spread
+                isFavorite: !prevContact.isFavorite	// changes only one object property; flips boolean
+            }
+        })
+}
+
+- State can be passed as a prop
+const [count, setCount] = React.useState(0)
+<Count number={count}/>
+
+- State can be altered from child component (pass function)
+function changeState()	
+<Component handleClick={changeState} />	
+function Component(props) {
+	return (
+		onClick={props.handleClick)			// use function (in App, since it lives there) via props in child Component
+	)
+
+06:59: box challenge schon code zu ende angesehen aber video noch nicht
+
