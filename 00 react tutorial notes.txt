@@ -103,5 +103,11 @@ function showPunchline() {
 - Forms: event.target (html element); event.target.value (html element value, like the text in a form field)
 - Controlled inputs: use function on every input field to register each change and update state accordingly
 
-08:50: Bei APA weiter machen
+- APIs:
+1. Get data (fetch or sth similar)
+2. Save data to state
 
+- Side Effects: localStorage, API/database interactions, subscriptions, syncing 2 different internal states ("anything React isn't in charge of")
+// see original *.txt
+
+09:24
